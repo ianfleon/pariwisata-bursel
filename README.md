@@ -1,1 +1,2 @@
-# pariwisata-bursel
+# Pariwisata Bursel
+Website pariwisata berbasis web.
