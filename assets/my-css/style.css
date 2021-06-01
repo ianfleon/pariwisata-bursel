@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'Poppins Ku';
+    src: url('assets/font/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Playfair Ku';
+    src: url('assets/font/PlayfairDisplay-Regular.ttf');
+}
+
+body {
+    font-family: 'Poppins Ku', sans-serif;
+}
+
+.img-hero {
+    width: 100%;
+    height:73vh;
+    object-fit: cover;
+}
+
+.jumbotron.hero {
+    padding: 0 !important;
+
+}
+
+.bg-navku {
+    background-color: rgba(25, 81, 89, 1);
+}
+
+.bg-navku a {
+    color: #fff !important;
+}
+
+.bg-section {
+    background-color: #ECECEC;
+}
+
+.img-carousel {
+    height: 320px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    display: block !important;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.label-section {
+    font-family: 'Playfair Ku';
+}
