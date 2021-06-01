@@ -13,10 +13,10 @@
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Galeri</a>
+                        <a class="nav-link" href="galeri.php">Galeri</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Artikel</a>
+                        <a class="nav-link" href="artikel.php">Artikel</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="profil.php">Profile</a>
