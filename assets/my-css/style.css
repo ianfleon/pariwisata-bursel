@@ -48,3 +48,8 @@ body {
 .label-section {
     font-family: 'Playfair Ku';
 }
+
+.btn-outline-putih {
+    background-color: transparent;
+    border-color: #fff;
+}
