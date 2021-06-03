@@ -22,7 +22,7 @@
                         <a class="nav-link" href="profil.php">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-outline-putih" href="profil.php">Hubungi Kami</a>
+                        <a class="btn btn-outline-putih" href="kontak.php">Hubungi Kami</a>
                     </li>
                 </ul>
             </div>
