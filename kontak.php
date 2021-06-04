@@ -22,6 +22,11 @@
                         <small id="emailHelp" class="form-text text-muted">Contoh: ekosaputro@gmail.com</small>
                     </div>
                     <div class="form-group">
+                        <label for="email">Subjek</label>
+                        <input type="email" id="email" class="form-control" required>
+                        <small id="emailHelp" class="form-text text-muted">Topik dari pesan ini</small>
+                    </div>
+                    <div class="form-group">
                         <label for="pesan">Pesan</label>
                         <textarea type="text" class="form-control" id="pesan" required></textarea>
                         <small id="emailHelp" class="form-text text-muted">Tulis pesan anda untuk kami</small>
