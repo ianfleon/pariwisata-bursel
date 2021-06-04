@@ -2,6 +2,7 @@
 
 $view = 'list-galeri.php'; // default view
 
+/* Ganti View */
 if (isset($_GET['view'])) {
     if (file_exists('galeri/' . $_GET['view'] . '.php')) {
         $view = $_GET['view'] . '.php';
@@ -12,24 +13,18 @@ if (isset($_GET['view'])) {
 
 ?>
 
-
 <!-- ++ Header -->
 <?php require_once '../app/views/admin/header.php' ?>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper py-3">
-    <!-- Content Header (Page header) -->
-    <!-- /.content-header -->
-
-    <!-- Main content -->
+<!-- Konten -->
+<div class="content-wrapper py-3">
     <section class="content">
-      <div class="container-fluid">
-          <?php require_once 'galeri/' . $view ?>
-      </div><!-- /.container-fluid -->
+        <div class="container-fluid">
+            <?php require_once 'galeri/' . $view ?>
+        </div>
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+</div>
+<!-- # Kontent -->
 
 <!-- ++ Footer -->
 <?php require_once '../app/views/admin/footer.php' ?>
