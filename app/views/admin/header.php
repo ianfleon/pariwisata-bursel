@@ -91,7 +91,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="pesan.php" class="nav-link">
+            <a href="galeri.php" class="nav-link">
               <i class="nav-icon far fa-images"></i>
               <p>
                 Galeri

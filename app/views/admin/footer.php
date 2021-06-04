@@ -23,29 +23,29 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
+ChartJS
+<!-- <script src="plugins/chart.js/Chart.min.js"></script> -->
 <!-- Sparkline -->
-<script src="plugins/sparklines/sparkline.js"></script>
+<scrsipt src="plugins/sparklines/sparkline.js"></scrsipt>
 <!-- JQVMap -->
-<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<scrsipt src="plugins/jqvmap/jquery.vmap.min.js"></scrsipt>
+<scrsipt src="plugins/jqvmap/maps/jquery.vmap.usa.js"></scrsipt>
 <!-- jQuery Knob Chart -->
-<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<scrsipt src="plugins/jquery-knob/jquery.knob.min.js"></scrsipt>
 <!-- daterangepicker -->
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<scrsipt src="plugins/moment/moment.min.js"></scrsipt>
+<scrsipt src="plugins/daterangepicker/daterangepicker.js"></scrsipt>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<scrsipt src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></scrsipt>
 <!-- Summernote -->
-<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<scrsipt src="plugins/summernote/summernote-bs4.min.js"></scrsipt>
 <!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<scrsipt src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></scrsipt>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
+<scrsipt src="dist/js/adminlte.js"></scrsipt>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<scrsipt src="dist/js/demo.js"></scrsipt>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
+<scrsipt src="dist/js/pages/dashboard.js"></scrsipt>
 </body>
 </html>
