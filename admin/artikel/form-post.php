@@ -1,3 +1,11 @@
+<?php
+
+if (isset($_POST['posting'])) {
+    $hasil = artikel_func('tambah', $_POST, $_FILES['cover']);
+}
+
+?>
+
 <div class="col-md-12">
     <!-- general form elements -->
     <div class="card card-dark">
@@ -6,7 +14,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form>
+        <form action="" method="post" enctype="multipart/form-data">
             <div class="card-body">
                 <div class="form-group">
                     <label for="status">Status</label>
@@ -17,28 +25,22 @@
                 </div>
                 <div class="form-group">
                     <label for="judul">Judul Artikel</label>
-                    <input type="text" class="form-control" id="judul" placeholder="Masukan Judul">
+                    <input type="text" name="judul" class="form-control" id="judul" placeholder="Masukan Judul">
                 </div>
                 <div class="form-group">
-                    <label for="judul">Isi Artikel</label>
-                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                    <label for="konten">Isi Artikel</label>
+                    <textarea name="konten" id="konten" cols="30" rows="10" class="form-control"></textarea>
                     <span class="text-muted">*Tulis isi artikel anda disini.</span>
                 </div>
-
                 <div class="form-group">
-                    <label for="exampleInputFile">Cover Artikel</label>
-                    <div class="input-group">
-                        <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Pilih gambar</label>
-                    </div>
-                </div>
-                    <p class="text-muted">*Gambar sampul untuk artikel</p>
+                    <label for="cover">Cover Artikel</label>
+                    <input type="file" class="form-control" name="cover" id="cover">
+                    <span class="text-muted">*Pilih cover artikel</span>
                 </div>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary"><i class="fa fa-plane"></i> Post!</button>
+                <button type="submit" name="posting" class="btn btn-primary"><i class="fa fa-plane"></i> Post!</button>
             </div>
         </form>
     </div>

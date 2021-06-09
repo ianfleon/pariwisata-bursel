@@ -1,6 +1,12 @@
 <!-- ++ Header -->
 <?php require_once '../app/views/admin/header.php' ?>
 
+<?php 
+
+
+
+?>
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->

@@ -1,3 +1,5 @@
+<?php require_once '../app/config/handler.php'; // main function ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,11 +71,10 @@
                with font-awesome or any other icon font library -->
           
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="index.php" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
-                Widget
-                <span class="right badge badge-danger">1</span>
+                Dashboard
               </p>
             </a>
           </li>
