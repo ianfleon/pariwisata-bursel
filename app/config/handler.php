@@ -59,3 +59,9 @@ function artikel_func($cmd = null, $data, $img)
 	$hasil = my_query($query);
 
 }
+
+// kirim pesan //
+function kirim_pesan($data)
+{
+
+}
