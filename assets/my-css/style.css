@@ -59,6 +59,11 @@ body {
     margin-top: 7rem;
 }
 
+.mb-7 {
+    margin-bottom: 7rem;
+}
+
+
 .card-title a {
     color: inherit;
 }
@@ -79,8 +84,33 @@ body {
     object-fit: cover;
 }
 
+/* Masonry Galeri */
+.masonry {
+    width: 100%;
+    column-count: 3;
+    column-gap: 0;
+}
+
+.masonry img {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.masonry .item {
+    box-sizing: border-box;
+    padding: .5rem;
+}
+
 @media only screen and (max-width: 1140px) {
     .thumb-post {
         max-height: 270px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .masonry {
+        column-count: inherit;
+        /*background: red;*/
     }
 }
