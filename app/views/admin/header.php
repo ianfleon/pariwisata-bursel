@@ -1,4 +1,13 @@
-<?php require_once '../app/config/handler.php'; // main function ?>
+<?php
+
+// Cek Login
+session_start();
+
+if (!isset($_SESSION['admin_login'])) {
+    header('Location: login.php');
+}
+
+require_once '../app/config/handler.php'; // main function ?>
 
 <!DOCTYPE html>
 <html lang="en">
