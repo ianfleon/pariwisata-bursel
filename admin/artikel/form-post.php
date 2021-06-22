@@ -22,6 +22,8 @@ if (isset($_POST['posting'])) {
                         <option value="1">Publish</option>
                         <option value="0">Draft</option>
                     </select>
+                <small id="emailHelp" class="form-text text-muted">*Publish : Artikel akan dipublikasi</small>
+                <small id="emailHelp" class="form-text text-muted">*Draft : Artikel akan dijadikan sebagai draft (tidak dipublikasi)</small>
                 </div>
                 <div class="form-group">
                     <label for="judul">Judul Artikel</label>
