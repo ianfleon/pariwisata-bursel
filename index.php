@@ -10,6 +10,10 @@
 
 <div class="jumbotron hero">
     <img src="assets/img/hero-bg.jpg" class="img-hero" alt="">
+    <div class="info-hero">
+        <h4 class="font-weight-bold">Pariwisata Buru Selatan</h4>
+        <p>Maluku</p>
+    </div>
 </div>
 
 <!-- Label Galeri -->
@@ -25,28 +29,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1621976066620-b42d6c56cf24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1026&q=80" class="img-thumbnail" alt="...">
+                <img src="assets/img/pantai2.jpg" class="img-thumbnail" alt="...">
             </div>
             <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1448320886379-a090c93f3de9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" class="img-thumbnail" alt="...">
+                <img src="assets/img/pantai3.jpg" class="img-thumbnail" alt="...">
             </div>
             <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1621976066620-b42d6c56cf24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1026&q=80" class="img-thumbnail" alt="...">
+                <img src="assets/img/kalapa.jpg" class="img-thumbnail" alt="...">
             </div>
             <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1621976066620-b42d6c56cf24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1026&q=80" class="img-thumbnail" alt="...">
-            </div>
-            <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1621976066620-b42d6c56cf24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1026&q=80" class="img-thumbnail" alt="...">
-            </div>
-            <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1621976066620-b42d6c56cf24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1026&q=80" class="img-thumbnail" alt="...">
-            </div>
-            <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1621976066620-b42d6c56cf24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1026&q=80" class="img-thumbnail" alt="...">
-            </div>
-            <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1621976066620-b42d6c56cf24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1026&q=80" class="img-thumbnail" alt="...">
+                <img src="assets/img/pulau1.jpg" class="img-thumbnail" alt="...">
             </div>
         </div>
     </div>

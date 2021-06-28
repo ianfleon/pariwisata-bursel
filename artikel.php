@@ -42,10 +42,10 @@
 
 <!-- Tampilan Daftar Artikel -->
 <div class="row">
-	<?php for ($i=0; $i<5; $i++) : ?>
+	<?php for ($i=0; $i<4; $i++) : ?>
 		<div class="col-xl-3 mb-3">
 			<div class="card">
-			  <img class="thumb-post" src="https://images.unsplash.com/photo-1623100603745-5f3d8d466bab?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
+			  <img class="thumb-post" src="assets/img/kalapa.jpg" class="card-img-top" alt="...">
 			  <div class="card-body">
 			    <h5 class="card-title">
 			    	<a href="artikel.php?baca=1">Pantai paling banyak dikunjungi</a>
@@ -75,6 +75,9 @@
 
 <?php endif; ?>
 <!-- //endif -->
+
+<?php require_once 'app/views/partial/page.php' ?>
+
 </div>
 
 <?php require_once 'app/views/partial/foot.php' ?>

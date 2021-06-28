@@ -70,7 +70,10 @@
 		</div>
 	</div>
 
+	<?php require_once 'app/views/partial/page.php' ?>
+	
 </div>
+
 
 <!-- ++ Footer -->
 <?php require_once 'app/views/partial/foot.php' ?>
