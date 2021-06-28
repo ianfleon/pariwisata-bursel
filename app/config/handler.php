@@ -1,7 +1,7 @@
 <?php /* Main Function */
 
 // koneksi //
-$conn = mysqli_connect("localhost", "ian", "ian", "paribursel_db");
+$conn = mysqli_connect("localhost", "root", "", "paribursel_db");
 
 // query //
 function my_query($query)

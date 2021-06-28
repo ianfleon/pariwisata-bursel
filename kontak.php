@@ -7,7 +7,7 @@
 <!-- Profile -->
 <div class="container-fluid d-flex justify-content-center mt-5 pt-3 pb-3">
     <div class="col-md-8 mt-5">
-    <h4 class="card-title font-weight-bolder">Hubungi Kami</h4>
+    <h4 class="card-title font-weight-bolder">🍀 Hubungi Kami</h4>
         <div class="card">
             <div class="card-body">
                 <form>

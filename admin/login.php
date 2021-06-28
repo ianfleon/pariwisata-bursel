@@ -36,7 +36,7 @@ if (isset($_POST['login'])) {
 
 <div class="container d-flex">
 	<div class="card border-dark mb-3 mx-auto mt-5" style="max-width: 21rem;">
-	  <div class="card-header">Login</div>
+	  <div class="card-header">🌴 Login</div>
 	  <div class="card-body text-dark">
 	    <form action="" method="POST">
 		  <div class="form-group">

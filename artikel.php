@@ -36,6 +36,10 @@
 
 <?php else : ?>
 
+<div class="label">
+	    <h4 class="label-section mb-3"><u>📪 Artikel</u></h4>
+</div>
+
 <!-- Tampilan Daftar Artikel -->
 <div class="row">
 	<?php for ($i=0; $i<5; $i++) : ?>

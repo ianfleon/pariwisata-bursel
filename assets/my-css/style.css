@@ -24,7 +24,8 @@ body {
 }
 
 .bg-navku {
-    background-color: rgba(25, 81, 89, 1);
+    /*background-color: rgba(25, 81, 89, 1);*/
+    background-color: rgb(45, 45, 45);
 }
 
 .bg-navku a {
@@ -32,7 +33,7 @@ body {
 }
 
 .bg-section {
-    background-color: #ECECEC;
+    background-color: #F9F9F9;
 }
 
 .img-carousel {
@@ -97,9 +98,36 @@ body {
     box-sizing: border-box;
 }
 
+.item-wrap {
+    padding: .5rem;
+}
+
 .masonry .item {
     box-sizing: border-box;
-    padding: .5rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.masonry .item:hover .info-gambar {
+    display: flex;
+}
+
+.item .info-gambar {
+    background-color: rgba(0, 0, 0, .25);
+    color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 1rem;
+    transition: .3s all ease;
+    display: none;
+    /*display: flex;*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 1140px) {
@@ -111,6 +139,5 @@ body {
 @media only screen and (max-width: 770px) {
     .masonry {
         column-count: inherit;
-        /*background: red;*/
     }
 }

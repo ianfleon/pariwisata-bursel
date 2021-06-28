@@ -7,7 +7,7 @@
 <!-- Profile -->
 <div class="container-fluid d-flex justify-content-center text-center mt-5 pt-3 pb-3">
     <div class="col-md-8 mt-5">
-        <h4 class="label-section">Tentang Buru Selatan</h4>   
+        <h4 class="label-section font-weight-bold">Tentang Buru Selatan</h4>   
         <p class="text-muted">
             Kabupaten Buru Selatan adalah sebuah kabupaten yang berada di provinsi Maluku, Indonesia, yang terletak di pulau Buru. Ibu kotanya adalah Namrole. Kabupaten ini dibentuk berdasarkan Undang-Undang Nomor 32 Tahun 2008 yang merupakan pemekaran dari Kabupaten Buru.
         </p>
