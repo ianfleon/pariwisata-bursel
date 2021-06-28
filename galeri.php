@@ -23,7 +23,7 @@
 			<div class="item">
 				<img src="assets/img/pulau1.jpg">
 				<div class="info-gambar">
-					<p class="font-weight-bold">Pantai Oki</p>
+					<p class="font-weight-bold">Pulau Oki</p>
 					<a href="#" class="btn btn-outline-light">Lihat Peta</a>
 				</div>
 			</div>
@@ -31,9 +31,9 @@
 
 		<div class="item-wrap">
 			<div class="item">
-				<img src="assets/img/pantai1.jpg">
+				<img src="assets/img/hero-bg.jpg">
 				<div class="info-gambar">
-					<p class="font-weight-bold">Pantai Oki</p>
+					<p class="font-weight-bold">Air Babunyi</p>
 					<a href="#" class="btn btn-outline-light">Lihat Peta</a>
 				</div>
 			</div>
@@ -43,7 +43,7 @@
 			<div class="item">
 				<img src="assets/img/pantai2.jpg">
 				<div class="info-gambar">
-					<p class="font-weight-bold">Pantai Oki</p>
+					<p class="font-weight-bold">Gua Waeteful</p>
 					<a href="#" class="btn btn-outline-light">Lihat Peta</a>
 				</div>
 			</div>
@@ -53,7 +53,7 @@
 			<div class="item">
 				<img src="assets/img/pantai3.jpg">
 				<div class="info-gambar">
-					<p class="font-weight-bold">Pantai Oki</p>
+					<p class="font-weight-bold">Teluk Tifu</p>
 					<a href="#" class="btn btn-outline-light">Lihat Peta</a>
 				</div>
 			</div>

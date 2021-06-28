@@ -42,7 +42,7 @@
 
 <!-- Tampilan Daftar Artikel -->
 <div class="row">
-	<?php for ($i=0; $i<4; $i++) : ?>
+
 		<div class="col-xl-3 mb-3">
 			<div class="card">
 			  <img class="thumb-post" src="assets/img/kalapa.jpg" class="card-img-top" alt="...">
@@ -50,11 +50,47 @@
 			    <h5 class="card-title">
 			    	<a href="artikel.php?baca=1">Pantai paling banyak dikunjungi</a>
 			    </h5>
-			    <p class="card-text text-muted">Some quick example text to build on the card title and make up the bulk of the card's content..</p>
+			    <p class="card-text text-muted">Terdapat beberapa pantai yang paling sering dikunjungi orang pada saat ini disaat..</p>
 			  </div>
 			</div>
 		</div>
-	<?php endfor; ?>
+
+		<div class="col-xl-3 mb-3">
+			<div class="card">
+			  <img class="thumb-post" src="assets/img/pulau1.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">
+			    	<a href="artikel.php?baca=1">Pulau Oki, Pulau surga di Buru Selatan</a>
+			    </h5>
+			    <p class="card-text text-muted">Pulau yang sangat indah bak surga ini terletak di Buru Selatan, tepatnya berada..</p>
+			  </div>
+			</div>
+		</div>
+
+		<div class="col-xl-3 mb-3">
+			<div class="card">
+			  <img class="thumb-post" src="assets/img/pantai1.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">
+			    	<a href="artikel.php?baca=1">Rekomendasi Pantai untuk Photoshot di Bu..</a>
+			    </h5>
+			    <p class="card-text text-muted">Suka foto-foto romantis kekinian? Tapi bingung dengan lokasi terupdate..</p>
+			  </div>
+			</div>
+		</div>
+
+		<div class="col-xl-3 mb-3">
+			<div class="card">
+			  <img class="thumb-post" src="assets/img/pantai3.jpg" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">
+			    	<a href="artikel.php?baca=1">Kapal Pesiar melintasi Buru Selatan</a>
+			    </h5>
+			    <p class="card-text text-muted">Beberapa hari lalu ada banyak kapal pesiar yang melintasi laut Buru Selatan..</p>
+			  </div>
+			</div>
+		</div>
+
 </div>
 
 <!-- <nav aria-label="...">
