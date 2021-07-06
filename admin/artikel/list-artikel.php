@@ -1,3 +1,12 @@
+<?php  
+
+require_once '../app/config/handler.php';
+
+// ambil seluruh gambar dari database
+$result_artikel = get_all_data('artikel');
+
+?>
+
 <!-- Tombol Tambah Artikel -->
 <a href="artikel.php?view=form-post" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tambah Artikel</a>
 
@@ -6,41 +15,31 @@
     <div class="col-12">
         <div class="card">
 
-            <div class="card-header">
+            <div class="card-header mb-3">
                 <h3 class="card-title">Daftar Artikel</h3>
-                <div class="card-tools">
-                    <div class="input-group input-group-sm" style="width: 150px;">
-                        <input type="text" name="table_search" class="form-control float-right" placeholder="Cari artikel..">
-                        <div class="input-group-append">
-                        <button type="submit" class="btn btn-default">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                  </div>
-                </div>
             </div>
             <!-- /.card-header -->
 
             <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
+                <table class="table table-hover text-nowrap" id="myTable">
                     <thead class="bg-dark">
                         <tr>
                             <th>Judul</th>
-                            <th>Status</th>
                             <th>Waktu Upload</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($result_artikel as $row) : ?>
                         <tr>
-                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                            <td>Draft</td>
-                            <td>11-7-2014</td>
+                            <td><?= $row['judul_artikel'] ?></td>
+                            <td><?= $row['tanggal'] ?></td>
                             <td>
-                                <a href="#" class="btn btn-warning">Edit</a>
-                                <a href="#" class="btn btn-danger">Hapus</a>
+                                <a href="artikel.php?view=edit-artikel&id=<?= $row['id'] ?>" class="btn btn-warning">Edit</a>
+                                <a href="hapus.php?page=artikel&tabel_name=artikel&id=<?= $row['id'] ?>" class="btn btn-danger" onclick="return confirm('hapus artikel ini?')">Hapus</a>
                             </td>
                         </tr>
+                        <?php endforeach; ?>
                   </tbody>
                 </table>
             </div>

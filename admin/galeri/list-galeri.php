@@ -1,3 +1,52 @@
+<?php  
+require_once '../app/config/handler.php';
+
+// ambil seluruh gambar dari database
+$result_galeri = get_all_data('galeri_tb');
+
+if( isset($_POST['submit']) )
+{
+    $tambah_galeri = tambah_galeri($_POST);
+    if( $tambah_galeri ) 
+    {
+        $notif_sukses = true;
+    }
+
+    echo "
+        <div class='row'>
+            <div class='col-md'>
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                Foto <strong>Berhasil</strong> diupload!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+                </div>
+            </div>
+        </div>
+        <meta http-equiv='refresh' content='1'>
+    ";
+}
+
+?>
+
+<!-- notifikasi sukses -->
+<?php 
+global $notif_sukses;
+if( $notif_sukses == true ): 
+    ?>
+    <div class="row">
+        <div class="col-md">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                Foto <strong>Berhasil</strong> diupload!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+<!-- akhir notifikasi sukses -->
+
 <!-- Tombol Tambah Galeri -->
 <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">
     <i class="fas fa-plus"></i> Tambah Galeri
@@ -8,49 +57,40 @@
     <div class="col-12">
         <div class="card">
 
-            <div class="card-header">
+            <div class="card-header mb-3">
                 <h3 class="card-title">Daftar Galeri</h3>
-                <div class="card-tools">
-                    <div class="input-group input-group-sm" style="width: 150px;">
-                        <input type="text" name="table_search" class="form-control float-right" placeholder="Cari artikel..">
-                        <div class="input-group-append">
-                        <button type="submit" class="btn btn-default">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                  </div>
-                </div>
             </div>
             <!-- /.card-header -->
 
             <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
+                <table class="table table-hover text-nowrap" id="myTable">
                     <thead class="bg-dark">
                         <tr>
                             <th>Thumbnail</th>
                             <th>Info</th>
-                            <th>Waktu Upload</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($result_galeri as $row) : ?>
                         <tr>
                             <td>
-                                <img class="img-thumbnail" src="https://images.unsplash.com/photo-1622744678361-64f90c825820?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" width="100" height="100">
+                                <img class="img-thumbnail" src="<?= BASE_URL ?>/assets/img_upload/<?= $row['nama_file'] ?>" width="100" height="100">
                             </td>
-                            <td>Draft</td>
-                            <td class="text-muted">11-7-2014</td>
+                            <td><?= $row['keterangan'] ?></td>
                             <td>
-                                <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</a>
+                                <a href="hapus.php?page=galeri&tabel_name=galeri_tb&id=<?= $row['id'] ?>" onclick="return confirm('Hapus gambar ini?')" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</a>
+                                <a href="<?= $row['gmaps'] ?>" class="btn btn-success" target="_blank"><i class="fa fa-map"></i> Lihat Peta</a>
                             </td>
                         </tr>
-                  </tbody>
+                        <?php endforeach; ?>
+                    </tbody>
                 </table>
             </div>
             <!-- /.card-body -->
 
         </div>
-    <!-- /.card -->
+        <!-- /.card -->
     </div>
 </div>
 
@@ -62,29 +102,34 @@
         <h5 class="modal-title" id="exampleModalLabel">Tambah Galeri</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-        <form>
-            <div class="modal-body">
-                <div class="form-group">
-                    <!-- <label for="exampleInputFile">Gambar</label> -->
-                    <div class="input-group">
-                        <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile" required>
-                        <label class="custom-file-label" for="exampleInputFile">Pilih gambar</label>
-                    </div>
-                </div>
-                <p class="text-muted">*Gambar harus dipilih</p>
-
-                <div class="form-group">
-                    <label for="judul">Keterangan</label>
-                    <input type="text" class="form-control" id="judul" placeholder="Masukan Informasi Tentang Gambar">
-                </div>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-primary">Upload!</button>
-            </div>
-        </form>
-      </div>
-    </div>
+      </button>
   </div>
+  <form action="" method="post" enctype="multipart/form-data">
+    <div class="modal-body">
+        <div class="form-group">
+            <!-- <label for="exampleInputFile">Gambar</label> -->
+            <div class="input-group">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="file" required>
+                    <label class="custom-file-label" for="exampleInputFile">Pilih gambar</label>
+                </div>
+            </div>
+            <p class="text-muted">*Gambar harus dipilih</p>
+
+            <div class="form-group">
+                <label for="keterangan">Keterangan</label>
+                <input type="text" class="form-control" id="keterangan" placeholder="Masukan Informasi Tentang Gambar" name="keterangan">
+            </div>
+
+            <div class="form-group">
+                <label for="keterangan">Link Peta (Google Maps)</label>
+                <input type="text" class="form-control" id="gmaps" placeholder="Masukan Informasi Tentang Gambar" name="gmaps">
+            </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+            <button type="submit" name="submit" class="btn btn-primary">Upload!</button>
+        </div>
+    </form>
+</div>
+</div>
+</div>
 </div>

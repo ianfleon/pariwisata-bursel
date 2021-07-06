@@ -9,19 +9,23 @@ if (isset($_SESSION['admin_login'])) {
 }
 
 if (isset($_POST['login'])) {
+
 	$id = $_POST['id'];
 	$pass = $_POST['password'];
 
-	if ($id == 1 && $pass == 1) {
+	require_once '../app/config/handler.php';
+
+	$data = query_get("SELECT * FROM admin_tbl WHERE admin_id = '$id' AND admin_pass = '$pass'");
+
+	if (count($data) == 1) {
 		echo "Berhasil login!";
 		$_SESSION['admin_login'] = $id;
 		header("Refresh: 2; url='index.php'");
 		die();
 	} else {
-		echo "Coba login kembali!";
+		$notif = "Akun tidak ditemukan!";
 	}
 
-	// var_dump($_POST);
 }
 
 ?>
@@ -54,6 +58,9 @@ if (isset($_POST['login'])) {
 		  </div> -->
 		  <button type="submit" class="btn btn-primary" name="login">Login</button>
 		</form>
+		<?php if (isset($notif)) : ?>
+		<p style="color: red" class="mt-2"><?= $notif ?></p>
+		<?php endif; ?>
 	  </div>
 	</div>
 </div>

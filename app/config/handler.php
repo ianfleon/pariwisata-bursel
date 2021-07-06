@@ -53,6 +53,7 @@ function tambah_galeri($data)
 	global $conn;
 	$keterangan_gambar = htmlspecialchars($data['keterangan']);
 	$waktu = date("m-d-y");
+	$gmaps = $data['gmaps'];
 
 	$gambar = upload_gambar();
 
@@ -61,7 +62,7 @@ function tambah_galeri($data)
 		return False;
 	}
 
-	$query = mysqli_query($conn, "INSERT INTO galeri_tb VALUES('', '$gambar', '$keterangan_gambar', '$waktu')");
+	$query = mysqli_query($conn, "INSERT INTO galeri_tb VALUES('', '$gambar', '$keterangan_gambar', '$waktu', '$gmaps')");
 
 }
 
@@ -81,8 +82,14 @@ function upload_gambar()
 
 
 	if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
-		if($ukuran < 1044070){			
-			move_uploaded_file($file_tmp, 'assets/img_upload/'.$nama_file_baru);
+		if($ukuran < 1044070) {
+			$dir = '../assets/img_upload/';
+			
+			if (!is_dir($dir)) {
+				mkdir($dir);
+			}
+			
+			move_uploaded_file($file_tmp, $dir.$nama_file_baru);
 			return $nama_file_baru;
 			
 		}

@@ -1,9 +1,15 @@
 <!-- ++ Header -->
 <?php require_once '../app/views/admin/header.php' ?>
 
-<?php 
+<?php
 
+require_once '../app/config/handler.php';
 
+$tgl = date("Y-m-d");
+
+$p = query_get("SELECT * FROM message_tb WHERE waktu LIKE '%$tgl%'");
+$a = query_get("SELECT * FROM artikel");
+$g = query_get("SELECT * FROM galeri_tb");
 
 ?>
 
@@ -30,13 +36,13 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>3</h3>
+                <h3><?= count($p) ?></h3>
                 <p>Pesan Hari Ini</p>
               </div>
               <div class="icon">
                 <i class="ion ion-email-unread"></i>
               </div>
-              <a href="#" class="small-box-footer">Lihat Pesan <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="pesan.php?today" class="small-box-footer">Lihat Pesan <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -44,29 +50,27 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>12</h3>
-
+                <h3><?= count($a) ?></h3>
                 <p>Artikel</p>
               </div>
               <div class="icon">
                 <i class="ion ion-clipboard"></i>
               </div>
-              <a href="#" class="small-box-footer">Lihat Semua Artikel <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="artikel.php" class="small-box-footer">Lihat Semua Artikel <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-danger">
               <div class="inner">
-                <h3>12</h3>
-
+                <h3><?= count($g) ?></h3>
                 <p>Galeri</p>
               </div>
               <div class="icon">
                 <i class="ion ion-images"></i>
               </div>
-              <a href="#" class="small-box-footer">Lihat Galeri <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="galeri.php" class="small-box-footer">Lihat Galeri <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
