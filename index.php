@@ -1,9 +1,24 @@
+<?php
+
+require_once 'app/config/handler.php';
+
+$artikels = get_data_page("SELECT * FROM artikel", 1, 3);
+
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <!-- Header -->
 <?php require_once 'app/views/partial/head.php' ?>
 </head>
+
+<style>
+    .link-white { color: white }
+    .link-white:hover { color: white; }
+    .text-light { color: rgb(180, 180, 180) }
+</style>
+
 <body>
 <!-- Nav -->
 <?php require_once 'app/views/partial/nav.php' ?>
@@ -28,17 +43,14 @@
 <div class="container-fluid bg-section py-3">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <img src="assets/img/pantai2.jpg" class="img-thumbnail" alt="...">
             </div>
-            <div class="col-md-3">
-                <img src="assets/img/pantai3.jpg" class="img-thumbnail" alt="...">
+            <div class="col-md-4">
+                <img src="assets/img/tanjung.jpg" class="img-thumbnail" alt="...">
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <img src="assets/img/kalapa.jpg" class="img-thumbnail" alt="...">
-            </div>
-            <div class="col-md-3">
-                <img src="assets/img/pulau1.jpg" class="img-thumbnail" alt="...">
             </div>
         </div>
     </div>
@@ -61,29 +73,23 @@
                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             </ol>
+
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/img/pantai1.jpg" class="d-block w-100 img-carousel" alt="...">
+
+                <?php foreach($artikels['data'] as $i => $a) : ?>
+                <div class="carousel-item <?= ($i == 0) ? 'active' : '' ?>">
+                    <img src="<?= BASE_URL ?>/assets/img_upload/<?= $a['nama_file'] ?>" class="d-block w-100 img-carousel">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Tempat Wisata Paling Banyak dikunjungi..</h5>
-                        <p>Senin, 12 September 2021</p>
+                        <h5>
+                          <a class="link-white" href="artikel.php?baca=<?= $a['id'] ?>"><?= $a['judul_artikel'] ?></a>
+                        </h5>
+                        <p class="text-light"><?= $a['tanggal'] ?></p>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="assets/img/kalapa.jpg" class="d-block w-100 img-carousel" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Suasana Bursel disaat pandemi</h5>
-                        <p>Senin, 12 September 2021</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/pantai3.jpg" class="d-block w-100 img-carousel" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Kapal Pesiar Berdatangan ke Buru Selatan</h5>
-                        <p>Senin, 12 September 2021</p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
+
             </div>
+
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Sebelumnya</span>
@@ -92,6 +98,7 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Selanjutnya</span>
             </a>
+
         </div>
     </div>
 </div>

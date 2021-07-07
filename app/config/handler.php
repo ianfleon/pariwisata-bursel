@@ -185,5 +185,29 @@ function hari_ini()
  
 }
 
-?>
+function get_data_page($query, $page = 1, $data_per_page = 3) {
 
+    global $conn;
+
+    $total_hasil = query_get($query);
+    
+    $total_data = count($total_hasil); // total data ditabel
+    
+    // $data_per_page = 3; // data yang tampil /halaman
+    $total_page = ceil($total_data / $data_per_page); // total halaman nanti
+
+    $index_limit1 = 0; // index_awal default
+        
+    // jika page lebih dari 1
+    if ( $page > 1 ) {
+        $index_limit1 = ($page * $data_per_page) - $data_per_page; // mengambil data dari index berapa
+    }
+
+    // LIMIT QUERY TABLE
+    $hasil_data = query_get($query . " LIMIT $index_limit1, $data_per_page");
+
+    $hasil['data'] = $hasil_data;
+    $hasil['total_halaman'] = $total_page;
+
+    return $hasil;
+}

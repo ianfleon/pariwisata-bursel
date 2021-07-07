@@ -1,3 +1,14 @@
+<?php 
+
+require_once 'app/config/handler.php';
+
+$page = 1;
+$perpage = 4;
+
+$galeris = get_data_page("SELECT * FROM galeri_tb", $page, $perpage);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,58 +30,21 @@
 
 	<div class="masonry">
 
+		<?php foreach($galeris['data'] as $g) : ?>
 		<div class="item-wrap">
 			<div class="item">
-				<img src="assets/img/pulau1.jpg">
+				<img src="<?= BASE_URL ?>/assets/img_upload/<?= $g['nama_file'] ?>">
 				<div class="info-gambar">
-					<p class="font-weight-bold">Pulau Oki</p>
-					<a href="#" class="btn btn-outline-light">Lihat Peta</a>
+					<p class="font-weight-bold"><?= $g['keterangan'] ?></p>
+					<a href="<?= $g['gmaps'] ?>" target="_blank" class="btn btn-outline-light">Lihat Peta</a>
 				</div>
 			</div>
 		</div>
+		<?php endforeach; ?>
 
-		<div class="item-wrap">
-			<div class="item">
-				<img src="assets/img/hero-bg.jpg">
-				<div class="info-gambar">
-					<p class="font-weight-bold">Air Babunyi</p>
-					<a href="#" class="btn btn-outline-light">Lihat Peta</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="item-wrap">
-			<div class="item">
-				<img src="assets/img/pantai2.jpg">
-				<div class="info-gambar">
-					<p class="font-weight-bold">Gua Waeteful</p>
-					<a href="#" class="btn btn-outline-light">Lihat Peta</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="item-wrap">
-			<div class="item">
-				<img src="assets/img/pantai3.jpg">
-				<div class="info-gambar">
-					<p class="font-weight-bold">Teluk Tifu</p>
-					<a href="#" class="btn btn-outline-light">Lihat Peta</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="item-wrap">
-			<div class="item">
-				<img src="assets/img/kalapa.jpg">
-				<div class="info-gambar">
-					<p class="font-weight-bold">Pantai Oki</p>
-					<a href="#" class="btn btn-outline-light">Lihat Peta</a>
-				</div>
-			</div>
-		</div>
 	</div>
 
-	<?php require_once 'app/views/partial/page.php' ?>
+	<?php // require_once 'app/views/partial/page.php' ?>
 	
 </div>
 

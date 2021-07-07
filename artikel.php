@@ -1,3 +1,23 @@
+<?php
+
+require_once 'app/config/handler.php';
+
+$page = 1;
+$perpage = 4;
+
+$artikels = get_data_page("SELECT * FROM artikel", $page, $perpage);
+
+if (isset($_GET['baca'])) {
+		$id = $_GET['baca'];
+		$artikel = query_get("SELECT * FROM artikel WHERE id = '$id'")[0];
+		
+		if (count($artikel) == 0) {
+				header("Location: artikel.php");
+		}
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,18 +37,13 @@
 <div class="col-xl-10 m-auto">
 	<div class="card p-3">
 	  	<h5 class="card-title">
-	  		<b>Pantai di Bursel kini jadi sorotan media sosial, Mari kita cek!</b>
+	  		<b><?= $artikel['judul_artikel'] ?></b>
 	  	</h5>
-	  	<p class="text-muted">Diupload: Senin, 12/01/21</p>
-	  	<img src="https://images.unsplash.com/photo-1623237801980-0e2b1ea19cc3?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="thumb-post-baca">
+	  	<p class="text-muted">Diupload: <?= $artikel['tanggal'] ?></p>
+	  	<img src="<?= BASE_URL ?>/assets/img_upload/<?= $artikel['nama_file'] ?>" class="thumb-post-baca">
 	  	<div class="card-body py-3 px-0">
 		    <p class="card-text">
-		    	Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		    	<?= $artikel['konten'] ?>
 		    </p>
 	  </div>
 	</div>
@@ -43,76 +58,26 @@
 <!-- Tampilan Daftar Artikel -->
 <div class="row">
 
+		<?php foreach($artikels['data'] as $a) : ?>
 		<div class="col-xl-3 mb-3">
 			<div class="card">
-			  <img class="thumb-post" src="assets/img/kalapa.jpg" class="card-img-top" alt="...">
+			  <img class="thumb-post" src="<?= BASE_URL ?>/assets/img_upload/<?= $a['nama_file'] ?>" class="card-img-top" alt="...">
 			  <div class="card-body">
 			    <h5 class="card-title">
-			    	<a href="artikel.php?baca=1">Pantai paling banyak dikunjungi</a>
+			    	<a href="artikel.php?baca=<?= $a['id'] ?>"><?= $a['judul_artikel'] ?></a>
 			    </h5>
-			    <p class="card-text text-muted">Terdapat beberapa pantai yang paling sering dikunjungi orang pada saat ini disaat..</p>
+			    <p class="card-text text-muted"><?= $a['konten'] ?></p>
 			  </div>
 			</div>
 		</div>
-
-		<div class="col-xl-3 mb-3">
-			<div class="card">
-			  <img class="thumb-post" src="assets/img/pulau1.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title">
-			    	<a href="artikel.php?baca=1">Pulau Oki, Pulau surga di Buru Selatan</a>
-			    </h5>
-			    <p class="card-text text-muted">Pulau yang sangat indah bak surga ini terletak di Buru Selatan, tepatnya berada..</p>
-			  </div>
-			</div>
-		</div>
-
-		<div class="col-xl-3 mb-3">
-			<div class="card">
-			  <img class="thumb-post" src="assets/img/pantai1.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title">
-			    	<a href="artikel.php?baca=1">Rekomendasi Pantai untuk Photoshot di Bu..</a>
-			    </h5>
-			    <p class="card-text text-muted">Suka foto-foto romantis kekinian? Tapi bingung dengan lokasi terupdate..</p>
-			  </div>
-			</div>
-		</div>
-
-		<div class="col-xl-3 mb-3">
-			<div class="card">
-			  <img class="thumb-post" src="assets/img/pantai3.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title">
-			    	<a href="artikel.php?baca=1">Kapal Pesiar melintasi Buru Selatan</a>
-			    </h5>
-			    <p class="card-text text-muted">Beberapa hari lalu ada banyak kapal pesiar yang melintasi laut Buru Selatan..</p>
-			  </div>
-			</div>
-		</div>
+		<?php endforeach; ?>
 
 </div>
 
-<!-- <nav aria-label="...">
-  <ul class="pagination">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active" aria-current="page">
-      <a class="page-link" href="#">2</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav> -->
+<?php // require_once 'app/views/partial/page.php' ?>
 
 <?php endif; ?>
 <!-- //endif -->
-
-<?php require_once 'app/views/partial/page.php' ?>
 
 </div>
 
